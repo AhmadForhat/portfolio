@@ -64,18 +64,30 @@ const Experiment: React.FC = () => {
   return (
     <Canvas style={{ width: '100vw', height: '100vh' }} camera={{ position: [15, 10, 15], fov: 75 }}>
       <OrbitControls makeDefault />
-      <Suspense fallback={null}>
         <mesh position={[1.0, 0, -8.0]} scale={1}>
-          <DogModel />
-          <MacBook />
-          <Table />
-          <Cactus />
-          <Chair />
-          <Cellphone />
-          <Coffee />
+          <Suspense fallback={null}>
+            <DogModel />
+          </Suspense>
+          <Suspense fallback={null}>
+            <MacBook />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Table />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Cactus />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Chair />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Cellphone />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Coffee />
+          </Suspense>
         </mesh>
         <Bed />
-      </Suspense>
       <mesh>
       <boxGeometry args={[20, 0.2, 20]} />
       <meshStandardMaterial roughness={0.4} metalness={0.5} />
